@@ -1,0 +1,70 @@
+<ion-view view-title="设置">
+<!-- 定义标题 -->
+  <ion-nav-title>
+     设置
+  </ion-nav-title>
+ 
+  <ion-content class="">
+   	<ion-list>
+		<ion-checkbox class="checkbox-dark" ng-repeat="item in items" ng-model="item.selected">
+			{{item.label}} : {{item.selected}}
+		</ion-checkbox>	
+		<div class="item item-divider">前端技术</div>
+		<ion-toggle toggle-class="toggle-dark"  ng-repeat="item in items" ng-model="item.selected">{{item.label}} / {{item.selected}}</ion-toggle>
+		<div class="item item-divider">Your choice : {{ret.choice}}</div>
+		<ion-radio radio-color="balanced"  ng-repeat="item in items"
+				   ng-model="ret.choice" ng-value="item.label">
+			{{item.label}}
+		</ion-radio>
+	</ion-list>
+	 <div class="list">
+            <div class="item item-input">
+                <i class="icon ion-ios-unlocked-outline positive"></i>
+                <input type="text" placeholder="First Name">
+            </div>
+            <label class="item item-input">
+                <span class="input-label">年龄</span>
+                <input type="text" placeholder="Last Name">
+            </label>
+            <label class="item item-input item-input-inset">
+                <textarea placeholder="Comments"></textarea>
+            </label>
+        </div>
+
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">First Name</span>
+                <input type="text" placeholder="First Name">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Last Name</span>
+                <input type="text" placeholder="Last Name">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Email">
+            </label>
+        </div>
+        <div class="list">
+            <div class="item range range-positive">
+                <i class="icon ion-ios-sunny-outline"></i>
+                <input type="range" name="volume" min="0" max="100" value="33">
+                <i class="icon ion-ios-sunny"></i>
+            </div>
+        </div>
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Lightsaber
+                </div>
+                <select>
+                    <option>Blue</option>
+                    <option selected>Green</option>
+                    <option>Red</option>
+                </select>
+            </label>
+
+        </div>
+  </ion-content>
+
+</ion-view>

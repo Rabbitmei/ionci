@@ -1,0 +1,44 @@
+
+ <ion-view view-title="详情">
+	<ion-nav-buttons side='right'>
+		<a class="button icon ion-refresh" ng-click="load();">载入</a>
+		<a class="button" ng-click="alert(0);flag.showReorder=!flag.showReorder;flag.showDelete=false;">重新排序</a>
+	</ion-nav-buttons>
+	<ion-nav-buttons side='left'>
+		<a class="button button-clear icon ion-ios-minus-outline" ng-click="abc();flag.showDelete=!flag.showDelete;flag.showReorder=false;"></a>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-refresher pulling-text="下拉刷新"  refreshing-icon="ion-load-d"	pulling-icon="ion-android-arrow-dropdown" on-refresh="doRefresh()" spinner="android">
+		</ion-refresher>
+		<ion-list can-swipe='true' show-delete="flag.showDelete" show-reorder="flag.showReorder">
+			<!-- can-swipe 是否显示option滑动 -->
+			<ion-item ng-repeat="item in items" >
+				{{item}}
+                <ion-option-button class="button-calm icon ion-edit"></ion-option-button>
+                <ion-option-button class="button-energized icon ion-share"></ion-option-button>
+                <ion-delete-button class="ion-minus-circled" ng-click="delete_item(item)"></ion-delete-button>
+				<ion-reorder-button class="ion-navicon" on-reorder="move_item(item,$fromIndex,$toIndex)"></ion-reorder-button>
+			</ion-item>
+		</ion-list>
+		<ion-list>
+			<ion-toggle  ng-model="settings.enableFriends">
+			Enable Friends
+			</ion-toggle>
+		</ion-list>
+		<ion-infinite-scroll   on-infinite="load_more();" icon="ion-load-a" distance="1%" immediate-check="true">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view> 
+<!-- <ion-view view-title="详情">
+ <ion-tabs class="tabs-icon-top  tabs-color-active-assertive tabs-color-light tabs-top " >
+ <ion-tab title="首页"  icon-off="ion-home" icon-on="ion-home" href="#/tab/dash">
+       <ion-nav-view name="tab-dashns"></ion-nav-view>
+ </ion-tab>
+ <ion-tab title="热点" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
+   <ion-nav-view name="tab-chatss"></ion-nav-view>
+ </ion-tab>
+ <ion-tab title="详情" icon-off="ion-document-text" icon-on="ion-document-text" href="#/tab/account">
+   <ion-nav-view name="tab-accounts"></ion-nav-view>
+ </ion-tab>
+</ion-tabs>  
+</ion-view>-->

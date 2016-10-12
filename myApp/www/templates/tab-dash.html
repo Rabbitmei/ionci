@@ -1,0 +1,43 @@
+<ion-view view-title="首页">
+<!-- 定义标题 -->
+      <ion-nav-title>
+         首 页
+      </ion-nav-title>
+      <ion-nav-buttons side='left'>
+     <!-- menu-toggle 侧边栏滑动-->
+        <button menu-toggle='left' class="button ion-android-person" ng-click='showLeft()'>
+          我
+        </button>
+      </ion-nav-buttons>
+      <ion-content class="">
+      <!-- banner -->
+        <ion-slide-box does-continue='true' 
+                     auto-play='true' 
+                     silde-interval="1000"
+                     on-slide-changed ='changedSlide(index)'
+                     active-slide = 'index'
+                     pager-click = 'go(index)'>  <!-- active-slide当前幻灯片索引  on-slide-changed av-->
+          <ion-slide ng-repeat='src in imgSrc' >
+            <img class='img' ng-src={{src}} src={{src}}> 
+          </ion-slide>
+        </ion-slide-box>
+        <div class="light tabLock">
+          <div class="row bl ion-top">
+            <!-- <div class="col-50 calm-bg f20 ion-ios-home"><a href='#/tab/hotel/20'>酒店</a></div>  --> 
+            <div class="col-50 calm-bg f20 ion-ios-home" src='#/tab/hotel/20'>酒店</div>       
+            <div class="col royal-bg ion-ios-person" src='#/tab/class/10'>我的携程</div>
+          </div>
+          <div class="row bt">
+              <div class="col-50 positive-bg ion-plane" src='#/tab/hotel/15'>机票</div>
+              <div class="col assertive-bg ion-android-subway" src='#/tab/hotel/16'>火车票</div>
+              <div class="col-25 calm-bg ion-model-s" src='#/tab/hotel/17'>用车</div>         
+          </div>
+          <div class="row bt">
+              <div class="col-33 balanced-bg ion-android-image" src='#/tab/hotel/18'>旅游</div>
+              <div class="col energized-bg ion-pricetag" src='#/tab/hotel/30'>景点门票</div>
+              <div class="col-25 dark-bg ion-ios-paw" src='#/tab/hotel/40'>攻畋</div>
+          </div>
+        </div>
+      </ion-content>
+      
+</ion-view>

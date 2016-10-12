@@ -1,0 +1,20 @@
+<ion-view view-title="热点">
+  <ion-content>
+    <ion-list><!--can-swipe是否可以滑动 show-delete 删除按妞是否显示 show-reorder 排序按钮-->
+     
+       <!--  <ion-delete-button class='ion-minus-circled' ng-click=''></ion-delete-button>
+       <ion-reorder-button class='ion-navicon' on-reorder='moveItem(item,$fromIndex,$toIndex)'><ion-reorder-button> -->
+       <ion-item class="item item-thumbnail-left item-remove-animate item-icon-right " ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.face}}">
+        <h2>{{chat.name}}</h2>
+        <p>{{chat.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+        <!-- 列表向右边时显示的按钮，可以有多个 -->
+        <ion-option-button class="button-assertive" ng-click="remove(chat)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+   
+  </ion-content>
+</ion-view>

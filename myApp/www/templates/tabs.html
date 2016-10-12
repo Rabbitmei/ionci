@@ -1,0 +1,48 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+<ion-nav-bar class="bar-stable bar-assertive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+</ion-nav-bar>
+<ion-tabs class="tabs-icon-top  tabs-color-active-assertive tabs-color-light" nav-direction='forward'>
+  <!-- Dashboard Tab -->
+  <ion-tab title="首页"  icon-off="ion-home" icon-on="ion-home" href="/tab/dash">
+    <!-- 侧边栏 -->
+    <ion-side-menus>
+      <ion-side-menu-content drag-content='false' edge-drag-threshold=50>
+        <ion-nav-bar class="bar-stable bar-assertive">
+          <ion-nav-back-button>
+          </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="tab-dash"></ion-nav-view>
+      </ion-side-menu-content>
+      <ion-side-menu side="left" width="150" class="energized-bg">
+        <div class="bar bar-header bar-energized item-input-inset">
+          <a class="button button-clear icon-right ion-android-arrow-dropdown" href="#/tab/dash">北京</a>
+          <label class="item-input-wrapper">
+            <input class="light-bg" type="text" placeholder="内容">
+          </label> 
+        </div>
+        <div>
+          这里放内容。
+        </div>
+      </ion-side-menu>
+    </ion-side-menus>
+  </ion-tab>
+  <!-- Chats Tab -->
+  <ion-tab title="热点" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+  <!-- Account Tab -->
+  <ion-tab title="排行" icon-off="ion-document-text" icon-on="ion-document-text" href="/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+  <!-- 设置 -->
+  <ion-tab title="我" icon-off="ion-android-settings" icon-on="ion-android-settings" href="/tab/seting">
+    <ion-nav-view name="tab-seting"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
